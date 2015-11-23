@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
 
-
-
 # Density_Sampling/setup.py;
 
 # Author: Gregory Giecold for the GC Yuan Lab
@@ -10,7 +8,7 @@
 # Contact: g.giecold@gmail.com, ggiecold@jimmy.harvard.edu
 
 
-r"""Setup script for Density_Sampling. For a dataset comprising a mixture 
+"""Setup script for Density_Sampling. For a dataset comprising a mixture 
 of rare and common populations, density sampling gives equal weights 
 to selected representatives of those distinct populations.
 
@@ -26,20 +24,10 @@ Giecold, G., Marco, E., Trippa, L. and Yuan, G.-C.,
 """
 
 
-
-
-#*********************************************************************************
-#*********************************************************************************
-
-
 from codecs import open
 from os import path
 from sys import version
 from setuptools import setup, find_packages
-
-
-#*********************************************************************************
-#*********************************************************************************
     
     
 here = path.abspath(path.dirname(__file__))
@@ -87,9 +75,3 @@ setup(name = 'Density_Sampling',
                    
       keywords = 'data-analysis data-mining downsampling sampling statistics subsampling',    
 )
-
-
-#*********************************************************************************
-#*********************************************************************************
-
-
