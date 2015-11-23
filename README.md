@@ -28,7 +28,7 @@ from the Python Standard Library:
 * setuptools
 
 Having ascertained that those requirements are met and having checked that the afore-mentioned libraries are up and running, you can install Density_Sampling from the Python Package Index (PyPI) in two simple steps:
-* open a terminal emulator window to interact with the Shell (KDE ``konsole`` or GNOME ``terminal``); 
+* open a terminal emulator window to interact with the Shell (KDE's ``konsole`` or GNOME's ``terminal``); 
 * enter the command: ``pip install Density_Sampling``
 
 Usage
