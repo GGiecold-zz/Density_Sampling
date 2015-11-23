@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
 
-
-
 # Density_Sampling/Density_Sampling.py
 
 # Author: Gregory Giecold for the GC Yuan Lab
@@ -10,7 +8,7 @@
 # Contact: g.giecold@gmail.com, ggiecold@jimmy.harvard.edu
 
 
-r"""For a data-set comprising a mixture of rare and common populations,
+"""For a data-set comprising a mixture of rare and common populations,
 density sampling gives equal weights to selected representatives
 of those distinct populations.
 
@@ -40,12 +38,6 @@ Giecold, G., Marco, E., Trippa, L. and Yuan, G.-C.,
 """
 
 
-
-
-#***************************************************************************************
-#***************************************************************************************
-
-
 import numbers
 import numpy as np
 import operator
@@ -56,27 +48,17 @@ from sys import exit
 from tempfile import NamedTemporaryFile
 
 
-#***************************************************************************************
-#***************************************************************************************
-
-
 __all__ = ['get_local_densities', 'density_sampling']
 
 
-#***************************************************************************************
-# memory
-#***************************************************************************************
-
-
 def memory():
-    r"""Determine memory specifications of the machine.
+    """Determine memory specifications of the machine.
 
     Returns
     -------
     mem_info : dictonary
         Holds the current values for the total, free and used memory of the system.
     """
-
 
     mem_info = {}
 
@@ -94,13 +76,8 @@ def memory():
     return mem_info
 
 
-#***************************************************************************************
-# get_chunk_size
-#***************************************************************************************
-
-
 def get_chunk_size(N, n):
-    r"""Given a two-dimensional array with a dimension of size 'N', 
+    """Given a two-dimensional array with a dimension of size 'N', 
         determine the number of rows or columns that can fit into memory.
 
     Parameters
@@ -116,7 +93,6 @@ def get_chunk_size(N, n):
     chunk_size : int
         The size of the dimension orthogonal to the one of size 'N'. 
     """
-
 
     mem_free = memory()['free']
     if mem_free > 60000000:
@@ -143,13 +119,8 @@ def get_chunk_size(N, n):
         exit(1)
 
 
-#***************************************************************************************
-# median_min_distance
-#***************************************************************************************
-
-
 def median_min_distance(data, metric):
-    r"""This function computes a graph of nearest-neighbors for each sample point in
+    """This function computes a graph of nearest-neighbors for each sample point in
         'data' and returns the median of the distribution of distances between those
         nearest-neighbors, the distance metric being specified by 'metric'.
     
@@ -170,7 +141,6 @@ def median_min_distance(data, metric):
         The median of the distribution of distances between nearest-neighbors.
     """
 
-
     data = np.atleast_2d(data)
     
     nearest_distances = kneighbors_graph(data, 1, mode = 'distance', metric = metric, include_self = False).data
@@ -180,13 +150,8 @@ def median_min_distance(data, metric):
     return round(median_min_dist, 4)
 
 
-#***************************************************************************************
-# get_local_densities
-#***************************************************************************************
-
-
 def get_local_densities(data, kernel_mult = 2.0, metric = 'manhattan'):
-    r"""For each sample point of the data-set 'data', estimate a local density in feature
+    """For each sample point of the data-set 'data', estimate a local density in feature
         space by counting the number of neighboring data-points within a particular
         region centered around that sample point.
     
@@ -214,7 +179,6 @@ def get_local_densities(data, kernel_mult = 2.0, metric = 'manhattan'):
         point in the order of the rows of 'data'.  
     """
     
-
     data = np.atleast_2d(data)
     
     assert isinstance(kernel_mult, numbers.Real) and kernel_mult > 0
@@ -251,15 +215,10 @@ def get_local_densities(data, kernel_mult = 2.0, metric = 'manhattan'):
     return local_densities
 
 
-#***************************************************************************************
-# density_sampling
-#***************************************************************************************
-
-
 def density_sampling(data, local_densities = None, metric = 'manhattan', 
                      kernel_mult = 2.0, outlier_percentile = 0.01, 
                      target_percentile = 0.05, desired_samples = None):
-    r"""The i-th sample point of the data-set 'data' is selected by density sampling
+    """The i-th sample point of the data-set 'data' is selected by density sampling
         with a probability given by:
         
                                       | 0 if outlier_density > LD[i];
@@ -311,7 +270,6 @@ def density_sampling(data, local_densities = None, metric = 'manhattan',
         density sampling, number 'i' is featured in the array returned by 
         the present function.
     """
-
 
     random_state = np.random.RandomState()
     
@@ -371,10 +329,6 @@ def density_sampling(data, local_densities = None, metric = 'manhattan',
     return samples_kept
 
 
-#***************************************************************************************
-#***************************************************************************************
-
-
 if __name__ == '__main__':
     
     import doctest
@@ -404,10 +358,3 @@ if __name__ == '__main__':
         plt.close()
     
     doctest.testmod()
-    
-
-#***************************************************************************************
-#***************************************************************************************
-
-    
-
