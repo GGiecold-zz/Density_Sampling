@@ -12,9 +12,9 @@ More specifically, density sampling proceeds as follows:
 * For each sample point of the data-set 'data', estimate a local density in feature space by counting the number of neighboring data-points within a particular region centered around that sample point.
 * The ``i``-th sample point of the data-set is selected by density sampling with a probability given by:
 ```
-                                  | 0 if outlier_density > LD[i];
-    P(keep the i-th data-point) = | 1 if outlier_density <= LD[i] <= target_density;
-                                  | target_density / LD[i] if LD[i] > target_density.
+                              | 0 if outlier_density > LD[i];
+P(keep the i-th data-point) = | 1 if outlier_density <= LD[i] <= target_density;
+                              | target_density / LD[i] if LD[i] > target_density.
 ```                                      
 Here ``LD[i]`` denotes the local density of the ``i``-th sample point of the data-set, whereas ``outlier_density`` and ``target_density`` are computed as particular percentiles of the distribution of local densities.
 
