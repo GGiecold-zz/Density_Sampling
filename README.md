@@ -34,7 +34,7 @@ Having ascertained that those requirements are met and having checked that the a
 Usage
 -----
 
-More information on the inner workings of density sampling can be gained from the docstrings of the functions making up this module.
+More information on the inner workings of density sampling can be gained from the docstrings associated to the functions making up this module.
 
 The following few lines illustrate density sampling on the Iris data-set from the UCI Machine Learning repository. Instead of copying those lines into a Python interpreter console, a similar exemple can be run automatically via Python's doctest's functionality. Simply locate the directory holding the file ``Density_Sampling.py``, change it to your current working directory and then type ``python Density_Sampling.py`` at the command line.
 
