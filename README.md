@@ -38,7 +38,9 @@ install Density_Sampling from the Python Package Index (PyPI) in two simple step
 Usage
 -----
 
-The following few lines illustrate density sampling on the Iris data-set from the UCI Machine Learning repository:
+More information is accessible via the docstrings of the functions making up this module. 
+The following few lines illustrate density sampling on the Iris data-set from the UCI Machine Learning repository. A similar exemple can be run automatically via Python's doctest's functionality by going to the directory holding the file ``Density_Sampling.py`` and typing ``python Density_Sampling.py`` at the command line.
+
 ```
 >>> from sklearn import datasets
 
@@ -74,8 +76,10 @@ The following few lines illustrate density sampling on the Iris data-set from th
     
 >>> plot_PCA(X_reduced, Y, 'the whole Iris data-set')
 
->>> sampled_indices = density_sampling(X_reduced, metric = 'euclidean', 
-                                       desired_samples = 50)
+>>> import Density_Sampling
+>>> sampled_indices = Density_Sampling.density_sampling(X_reduced, 
+                        metric = 'euclidean', desired_samples = 50)
+                        
 >>> downsampled_X_reduced = X_reduced[sampled_indices, :]
 >>> downsampled_Y = Y[sampled_indices]
 
