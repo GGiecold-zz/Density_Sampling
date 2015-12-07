@@ -31,6 +31,8 @@ Having ascertained that those requirements are met and having checked that the a
 * open a terminal emulator window to interact with the Shell (KDE's ``konsole`` or GNOME's ``terminal``); 
 * enter the command: ``pip install Density_Sampling``
 
+This module has been tested on Fedora, OS X and Ubuntu and should work fine on any other member of the Unix-like family of operating systems. 
+
 Usage
 -----
 
