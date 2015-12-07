@@ -37,7 +37,7 @@ with open(path.join(here, 'README'), encoding = 'utf-8') as f:
     
 
 setup(name = 'Density_Sampling',
-      version = '1.0',
+      version = '1.1',
       
       description = 'For a dataset comprising a mixture of rare and common populations, density sampling gives equal weights to the representatives of those distinct populations.',
       long_description = long_description,
@@ -65,7 +65,6 @@ setup(name = 'Density_Sampling',
                    'Intended Audience :: Science/Research',          
                    'License :: OSI Approved :: MIT License',
                    'Natural Language :: English',
-                   'Operating System :: Microsoft :: Windows',
                    'Operating System :: MacOS :: MacOS X',
                    'Operating System :: POSIX',
                    'Programming Language :: Python :: 2.7',
