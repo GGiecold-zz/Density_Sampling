@@ -27,7 +27,8 @@ from the Python Standard Library:
 * scikit-learn
 * setuptools
 
-Having ascertained that those requirements are met and having checked that the afore-mentioned libraries are up and running, you can install Density_Sampling from the Python Package Index (PyPI) in two simple steps:
+It is recommended that you ascertain that those requirements are met and check that the afore-mentioned libraries are up and running, even though the ``pip``command below should automatically handle the installation of those dependencies. 
+You can install Density_Sampling from the Python Package Index (PyPI) in two simple steps:
 * open a terminal emulator window to interact with the Shell (KDE's ``konsole`` or GNOME's ``terminal``); 
 * enter the command: ``pip install Density_Sampling``
 
