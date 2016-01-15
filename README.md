@@ -90,5 +90,6 @@ The following few lines illustrate density sampling on the Iris data-set from th
 Reference
 ---------
 
-Giecold, G., Marco, E., Trippa, L. and Yuan, G.-C., "Robust Inference of Cell Lineages". 
-Submitted for publication.
+Giecold, G., Marco, E., Trippa, L. and Yuan, G.-C.,
+"Robust Lineage Reconstruction from High-Dimensional Single-Cell Data". 
+ArXiv preprint [q-bio.QM, stat.AP, stat.CO, stat.ML]: http://arxiv.org/abs/1601.02748
