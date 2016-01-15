@@ -33,8 +33,9 @@ An illustration of how to use the present module is in order:
 
 Reference
 ---------
-Giecold, G., Marco, E., Trippa, L. and Yuan, G.-C., 
-"Robust Inference of Cell Lineages", submitted for publication.
+Giecold, G., Marco, E., Trippa, L. and Yuan, G.-C.,
+"Robust Lineage Reconstruction from High-Dimensional Single-Cell Data". 
+ArXiv preprint [q-bio.QM, stat.AP, stat.CO, stat.ML]: http://arxiv.org/abs/1601.02748
 """
 
 
