@@ -47,6 +47,7 @@ from sklearn.neighbors import kneighbors_graph
 from sklearn.neighbors import radius_neighbors_graph
 from sys import exit
 from tempfile import NamedTemporaryFile
+import psutil
 
 
 __all__ = ['get_local_densities', 'density_sampling']
@@ -62,17 +63,10 @@ def memory():
     """
 
     mem_info = {}
+    mem = psutil.virtual_memory()
 
-    with open('/proc/meminfo') as file:
-        c = 0
-        for line in file:
-            lst = line.split()
-            if str(lst[0]) == 'MemTotal:':
-                mem_info['total'] = int(lst[1])
-            elif str(lst[0]) in ('MemFree:', 'Buffers:', 'Cached:'):
-                c += int(lst[1])
-        mem_info['free'] = c
-        mem_info['used'] = (mem_info['total']) - c
+    mem_info['free'] = mem.free
+    mem_info['used'] = mem.used
 
     return mem_info
 
@@ -290,8 +284,8 @@ def density_sampling(data, local_densities = None, metric = 'manhattan',
     else:
         local_densities = np.reshape(local_densities, local_densities.size)
 
-    outlier_density = np.percentile(local_densities, outlier_percentile)
-    target_density = np.percentile(local_densities, target_percentile)
+    outlier_density = np.percentile(local_densities, outlier_percentile*100)
+    target_density = np.percentile(local_densities, target_percentile*100)
 
     samples_kept = np.where(local_densities > outlier_density)[0]
     N_kept = samples_kept.size    
