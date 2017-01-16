@@ -24,6 +24,7 @@ Installation and Requirements
 Density_Sampling is written in Python 2.7 and requires the following packages, along with a few modules 
 from the Python Standard Library:
 * NumPy >= 1.9.0
+* psutil
 * scikit-learn
 * setuptools
 
