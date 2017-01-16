@@ -57,7 +57,7 @@ setup(name = 'Density_Sampling',
       
       py_modules = ['Density_Sampling'],
       platforms = ('Any',),
-      install_requires = ['numpy>=1.9.0', 'setuptools', 'sklearn'],
+      install_requires = ['numpy>=1.9.0', 'psutil', 'setuptools', 'sklearn'],
                           
       classifiers = ['Development Status :: 4 - Beta',
                    'Environment :: Console',
