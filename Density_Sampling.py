@@ -191,13 +191,13 @@ def get_local_densities(data, kernel_mult = 2.0, metric = 'manhattan'):
             _, counts = np.unique(fp, return_counts = True)
 
         local_densities = np.zeros(N_samples, dtype = int)
-        for i in xrange(N_samples):
+        for i in range(N_samples):
             local_densities[i] = counts[i]
     else:
         local_densities = np.zeros(N_samples, dtype = int)
 
         chunks_size = get_chunk_size(N_samples, 2)
-        for i in xrange(0, N_samples, chunks_size):
+        for i in range(0, N_samples, chunks_size):
             chunk = data[i:min(i + chunks_size, N_samples)]
 
             D = pairwise_distances(chunk, data, metric, n_jobs = 1)
